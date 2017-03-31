@@ -22,12 +22,14 @@ loop:
     if (s==60) {s=0; m++;}
     if (m==60) {h++; m=0;}
     if (h==24) {h=0;}
-    printf("\r         hora:  %2dh   %2dm  %2ds", h, m, s);
+    printf("\r       hora:  %2dh   %2dm  %2ds                       ", h, m, s);
     s++;
-        if (h==dh && m==dm && s==ds){
-     while (x<10) {
-            printf("\n acorda!!!!");}
-    }
+        if (h==dh && m==dm && s==(ds + 1))
+            x++;
+             if (x>0 && x <=10) {
+            printf("\n      acorda!!!" );
+            x++;
+        }
     goto loop;
     return 0;
 }
